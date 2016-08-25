@@ -1,7 +1,25 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Destination</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for link in links %}
+                <tr>
+                    <td>{{ link.id }}</td>
+                    <td>{{ link.name }}</td>
+                    <td>{{ link.destination }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
 
+    </table>
 {% endblock %}
 
 {% block stylesheets %}

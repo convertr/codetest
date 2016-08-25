@@ -14,10 +14,11 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
+        $links = $this->getDoctrine()->getRepository('AppBundle:Link')->findAll();
 
         // replace this example code with whatever you need
         return $this->render('default/index.html.twig', [
-
+            'links' => $links
         ]);
     }
 
