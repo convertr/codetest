@@ -7,6 +7,7 @@
                 <th>Id</th>
                 <th>Name</th>
                 <th>Destination</th>
+                <th>Tracking Link</th>
             </tr>
         </thead>
         <tbody>
@@ -15,12 +16,14 @@
                     <td>{{ link.id }}</td>
                     <td>{{ link.name }}</td>
                     <td>{{ link.destination }}</td>
+                    <td>
+                        <a href="http://codetest.dev/click?linkId={{ link.id }}">
+                        <pre>http://codetest.dev/click?linkId={{ link.id }}</pre>
+                        </a>
+                    </td>
                 </tr>
             {% endfor %}
         </tbody>
 
     </table>
-{% endblock %}
-
-{% block stylesheets %}
 {% endblock %}
