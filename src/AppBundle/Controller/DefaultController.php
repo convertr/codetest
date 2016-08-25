@@ -3,7 +3,6 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Link;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -20,15 +19,9 @@ class DefaultController extends Controller
         $data = [];
 
         foreach ($stats as $row) {
-            if (!isset($data[$row->getLink()->getId()])) {
-                $data[$row->getLink()->getId()]['clicks'] = 0;
-                $data[$row->getLink()->getId()]['impressions'] = 0;
-            }
-
-            $data[$row->getLink()->getId()]['clicks'] += $row->getClicks();
-            $data[$row->getLink()->getId()]['impressions'] = $row->getImpressions();
+            @$data[$row->getLink()->getId()]['clicks'] += $row->getClicks();
+            @$data[$row->getLink()->getId()]['impressions'] = $row->getImpressions();
         }
-
 
         // replace this example code with whatever you need
         return $this->render('default/index.html.twig', [
