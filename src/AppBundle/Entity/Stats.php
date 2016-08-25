@@ -46,9 +46,9 @@ class Stats
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="udpatedTs", type="datetime")
+     * @ORM\Column(name="updatedTs", type="datetime")
      */
-    private $udpatedTs;
+    private $updatedTs;
 
     /**
      * @var \AppBundle\Entity\Link
@@ -146,13 +146,13 @@ class Stats
     /**
      * Set udpatedTs
      *
-     * @param \DateTime $udpatedTs
+     * @param \DateTime $updatedTs
      *
      * @return Stats
      */
-    public function setUdpatedTs($udpatedTs)
+    public function setUpdatedTs($updatedTs)
     {
-        $this->udpatedTs = $udpatedTs;
+        $this->updatedTs = $updatedTs;
 
         return $this;
     }
@@ -162,9 +162,9 @@ class Stats
      *
      * @return \DateTime
      */
-    public function getUdpatedTs()
+    public function getUpdatedTs()
     {
-        return $this->udpatedTs;
+        return $this->updatedTs;
     }
 
     /**
