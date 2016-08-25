@@ -16,9 +16,24 @@ class DefaultController extends Controller
     {
         $links = $this->getDoctrine()->getRepository('AppBundle:Link')->findAll();
 
+        $stats = $this->getDoctrine()->getRepository('AppBundle:Stats')->findAll();
+        $data = [];
+
+        foreach ($stats as $row) {
+            if (!isset($data[$row->getLink()->getId()])) {
+                $data[$row->getLink()->getId()]['clicks'] = 0;
+                $data[$row->getLink()->getId()]['impressions'] = 0;
+            }
+
+            $data[$row->getLink()->getId()]['clicks'] += $row->getClicks();
+            $data[$row->getLink()->getId()]['impressions'] = $row->getImpressions();
+        }
+
+
         // replace this example code with whatever you need
         return $this->render('default/index.html.twig', [
-            'links' => $links
+            'links' => $links,
+            'stats' => $data
         ]);
     }
 
