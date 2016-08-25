@@ -20,6 +20,7 @@ class ClickController extends Controller
         $click->setCreatesTs(new \DateTime());
         $click->setLink($link);
         $click->setRequest($_REQUEST);
+        $click->setIp($_SERVER['REMOTE_ADDR']);
 
         $this->get('doctrine')->getEntityManager()->persist($click);
         $this->get('doctrine')->getEntityManager()->flush();
