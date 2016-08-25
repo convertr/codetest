@@ -7,6 +7,8 @@
                 <th>Id</th>
                 <th>Name</th>
                 <th>Destination</th>
+                <th>Impressions</th>
+                <th>Clicks</th>
                 <th>Tracking Link</th>
             </tr>
         </thead>
@@ -16,6 +18,8 @@
                     <td>{{ link.id }}</td>
                     <td>{{ link.name }}</td>
                     <td>{{ link.destination }}</td>
+                    <td>{{ stats[link.id].impressions|default(0) }}</td>
+                    <td>{{ stats[link.id].clicks|default(0) }}</td>
                     <td>
                         <a href="http://codetest.dev/click?linkId={{ link.id }}">
                         <pre>http://codetest.dev/click?linkId={{ link.id }}</pre>
