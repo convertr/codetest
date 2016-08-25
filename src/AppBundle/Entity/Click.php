@@ -36,6 +36,13 @@ class Click
     private $request;
 
     /**
+     * @var array
+     *
+     * @ORM\Column(name="ip", type="string", length=255)
+     */
+    private $ip;
+
+    /**
      * @var \AppBundle\Entity\Link
      *
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Link", inversedBy="clicks")
@@ -125,5 +132,29 @@ class Click
     public function getLink()
     {
         return $this->link;
+    }
+
+    /**
+     * Set ip
+     *
+     * @param string $ip
+     *
+     * @return Click
+     */
+    public function setIp($ip)
+    {
+        $this->ip = $ip;
+
+        return $this;
+    }
+
+    /**
+     * Get ip
+     *
+     * @return string
+     */
+    public function getIp()
+    {
+        return $this->ip;
     }
 }
