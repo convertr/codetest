@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+{% block title %}Add a link{% endblock %}
+{% block body %}
+    <form action="/link/add" method="post">
+        <div class="form-group">
+            <label id="name">Name of link</label>
+            <input type="text" name="name" id="name" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label for="destination">Destination URL</label>
+            <input type="text" name="destination" id="destination" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-default">Go</button>
+    </form>
+
+    <a href="/">Back</a>
+{% endblock %}
