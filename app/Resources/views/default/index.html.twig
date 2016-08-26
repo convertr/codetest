@@ -10,6 +10,7 @@
                 <th>Impressions</th>
                 <th>Clicks</th>
                 <th>Tracking Link</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -23,6 +24,11 @@
                     <td>
                         <a href="http://codetest.dev/click?linkId={{ link.id }}" target="_blank">
                         <pre>http://codetest.dev/click?linkId={{ link.id }}</pre>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="/link/edit/{{ link.id }}">
+                            Edit Link
                         </a>
                     </td>
                 </tr>
