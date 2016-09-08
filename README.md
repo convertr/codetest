@@ -2,11 +2,12 @@
 
 We've built a very simple tracking app using Symfony 3.1.3. We've littered the code with bad practises and issues, which we would like you to improve and fix. We're also missing a core feature, Impression tracking.
 
-Looking at the entire codebase, we would like you to update and return the project to us with a breakdown of what you've chnaged and why you did it. You can add your notes to the bottom of this readme file.
+Looking at the entire codebase, we would like you to update and return the project to us with a breakdown of what you've changed and why you did it. You can add your notes to the bottom of this readme file. 
+Please return your completed codetest in a zip file, or on a **private** git repository (we do not want the test being publicly available).
 
 Tasks:
 
-* We would like you to add a simple impression tracker.
+* We would like you to add a simple impression tracker (an image tag which can be embedded in an email or display ad).
     * The response type should be an image - as impressions tend to be embeded in emails
     * An Impression entity will need to be created and related to the Link object
     * The stats table should also be updated for each impression
@@ -31,5 +32,3 @@ We'll be looking closely at the following things
 
 
 ### Your notes:
-
-	
