@@ -7,11 +7,12 @@ Please return your completed codetest in a zip file, or on a **private** git rep
 
 Tasks:
 
-* We would like you to add a simple impression tracker (an image tag which can be embedded in an email or display ad).
-    * The response type should be an image - as impressions tend to be embeded in emails
-    * An Impression entity will need to be created and related to the Link object
-    * The stats table should also be updated for each impression
-    
+* We would like you to add a simple impression tracker which will help us track how many times an email or online ad has been viewed.
+    * The controller should return an image response - as impressions tend to be embedded in emails using a `<img>` tag
+    * An Impression entity will need to be created and related to the Link object (so a Link object will have both clicks and impressions related to it)
+    * We should be able to increment the impressions of a specific link via a url such as `/impression?linkId=1`
+    * The stats table should also be updated for each impression per link
+
 * We've littered the codebase with bad things. We'd like you to comb through and update the code where you see fit.
 	* We'd expect you to implement best practices
 	* Refactor any poor quality code
