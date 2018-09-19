@@ -24,6 +24,20 @@ Tasks:
 3. Think about performance
 	* Our app is expected to handle a lot of traffic, particulaly impressions
 	
+	
+### Set up
+
+Install docker-composer
+
+Run `docker-compose up -d` in the root of the project
+Then run:
+
+```
+docker exec convertr-code-test-php-fpm composer install && bin/console doc:sch:up --force
+```
+
+Visit http://localhost:1025/app_dev.php
+	
 ### Hints & Tips
 
 We'll be looking closely at the following things
