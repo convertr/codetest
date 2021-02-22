@@ -34,7 +34,7 @@ Then run:
 
 `docker exec convertr-test-php-fpm composer install` followed by `docker exec convertr-test-php-fpm bin/console doc:sch:up --force`
 
-Visit http://localhost:1025/app_dev.php
+Visit http://localhost:8001/
 	
 ### Hints & Tips
 
