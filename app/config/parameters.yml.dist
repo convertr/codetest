@@ -3,7 +3,7 @@ parameters:
     database_host: mysql
     database_port: 3306
     database_name: test
-    database_user: user
+    database_user: root
     database_password: pass
     mailer_transport: smtp
     mailer_host: 127.0.0.1

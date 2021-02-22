@@ -32,7 +32,7 @@ Install docker-composer
 Run `docker-compose up -d` in the root of the project
 Then run:
 
-`docker exec convertr-code-test-php-fpm composer install` followed by `docker exec convertr-code-test-php-fpm bin/console doc:sch:up --force`
+`docker exec convertr-test-php-fpm composer install` followed by `docker exec convertr-test-php-fpm bin/console doc:sch:up --force`
 
 Visit http://localhost:1025/app_dev.php
 	
