@@ -1,42 +1,38 @@
-###############################################################################
-#                          Generated on phpdocker.io                          #
-###############################################################################
 version: "3.1"
 services:
 
-    redis:
-      image: redis:alpine
-      container_name: convertr-test-redis
+  redis:
+    image: redis:alpine
+    container_name: convertr-test-redis
 
-    mysql:
-      image: mysql:5.6
-      container_name: convertr-test-mysql
-      working_dir: /application
-      volumes:
-        - .:/application
-      environment:
-        - MYSQL_ROOT_PASSWORD=pass
-        - MYSQL_DATABASE=convertr
-        - MYSQL_USER=user
-        - MYSQL_PASSWORD=pass
-      ports:
-        - "8003:3306"
+  mysql:
+    image: mysql:5.6
+    container_name: convertr-test-mysql
+    working_dir: /application
+    volumes:
+      - .:/application
+    environment:
+      - MYSQL_ROOT_PASSWORD=pass
+      - MYSQL_DATABASE=convertr
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=pass
+    ports:
+      - "3306:3306"
 
-    webserver:
-      image: nginx:alpine
-      container_name: convertr-test-webserver
-      working_dir: /application
-      volumes:
-          - .:/application
-          - ./phpdocker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
-      ports:
-       - "8001:80"
+  webserver:
+    image: nginx:alpine
+    container_name: convertr-test-webserver
+    working_dir: /application
+    volumes:
+      - .:/application
+      - ./phpdocker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "8001:80"
 
-    php-fpm:
-      build: phpdocker/php-fpm
-      container_name: convertr-test-php-fpm
-      working_dir: /application
-      volumes:
-        - .:/application
-        - ./phpdocker/php-fpm/php-ini-overrides.ini:/etc/php/7.0/fpm/conf.d/99-overrides.ini
-
+  php-fpm:
+    build: phpdocker/php-fpm
+    container_name: convertr-test-php-fpm
+    working_dir: /application
+    volumes:
+      - .:/application
+      - ./phpdocker/php-fpm/php-ini-overrides.ini:/etc/php/8.1/fpm/99-overrides.ini
